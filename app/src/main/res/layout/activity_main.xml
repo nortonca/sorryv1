@@ -1,37 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="800dp"
-        android:layout_height="match_parent"
-        android:src="@drawable/sorryb" />
-
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <!-- Game board image -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:src="@drawable/sorryimage" />
+
+        <!-- Side panel for cards and actions -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
 
+            <!-- Game Status situated at the top -->
+            <TextView
+                android:id="@+id/textViewGameStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game Status"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                style="@style/TextAppearance.AppCompat.Headline" />
 
+            <!-- Outlined box for messages -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outline_box"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp"> <!-- Adjusted for spacing -->
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="45sp"
-            android:text="cards" />
+                <!-- Messages TextView -->
+                <TextView
+                    android:id="@+id/textViewMessages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Message Line 1\nMessage Line 2\nMessage Line 3"
+                    android:gravity="top|start"
+                    android:maxLines="3"
+                    android:ellipsize="end" />
+            </FrameLayout>
+
+            <!-- Image of a card -->
+            <ImageView
+                android:id="@+id/imageViewCard"
+                android:layout_width="wrap_content"
+                android:layout_height="450dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/sorrycardone" />
+
+            <!-- Draw cards button at the bottom -->
+            <Button
+                android:id="@+id/buttonDrawCards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/draw_cards"
+                android:layout_gravity="bottom"
+                android:theme="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                style="@style/Widget.MaterialComponents.Button" />
+        </LinearLayout>
     </LinearLayout>
 
+    <!-- Navigation Drawer to include additional options and settings -->
+    <!-- Implement NavigationView here -->
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

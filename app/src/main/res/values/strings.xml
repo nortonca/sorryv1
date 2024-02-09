@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">sorryv1</string>
+    <string name="game_status">Game Status</string>
+    <string name="draw_cards">Draw Cards</string>
+    <string name="roll_dice">Roll Dice</string>
+
+
 </resources>
