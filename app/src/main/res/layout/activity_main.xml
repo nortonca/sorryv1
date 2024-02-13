@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -37,13 +38,14 @@
                 android:layout_marginBottom="8dp"
                 style="@style/TextAppearance.AppCompat.Headline" />
 
-            <!-- Outlined box for messages -->
-            <FrameLayout
+            <!-- Outlined box for messages using LinearLayout -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/outline_box"
                 android:padding="8dp"
-                android:layout_marginBottom="8dp"> <!-- Adjusted for spacing -->
+                android:layout_marginBottom="8dp"
+                android:gravity="center">
 
                 <!-- Messages TextView -->
                 <TextView
@@ -51,19 +53,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Message Line 1\nMessage Line 2\nMessage Line 3"
-                    android:gravity="top|start"
                     android:maxLines="3"
                     android:ellipsize="end" />
-            </FrameLayout>
+            </LinearLayout>
 
             <!-- Image of a card -->
             <ImageView
                 android:id="@+id/imageViewCard"
                 android:layout_width="wrap_content"
-                android:layout_height="450dp"
+                android:layout_height="460dp"
+                android:src="@drawable/sorrycardone"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="8dp"
-                android:src="@drawable/sorrycardone" />
+                android:layout_marginBottom="8dp" />
 
             <!-- Draw cards button at the bottom -->
             <Button
@@ -77,7 +78,4 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Navigation Drawer to include additional options and settings -->
-    <!-- Implement NavigationView here -->
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
